@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/tarot_site/node_modules
+/tarot_site/.pnp
+/tarot_site/.pnp.js
+
+# testing
+/tarot_site/coverage
+
+# production
+/tarot_site/build
+
+# misc
+/tarot_site/.DS_Store
+/tarot_site/.env.local
+/tarot_site/.env.development.local
+/tarot_site/.env.test.local
+/tarot_site/.env.production.local
+
+/tarot_site/npm-debug.log*
+/tarot_site/yarn-debug.log*
+/tarot_site/yarn-error.log*
