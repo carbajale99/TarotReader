@@ -1,24 +1,28 @@
+import { useState, useEffect } from 'react';
 import * as React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CardList from './components/CardList';
+import Card from './components/Card';
+
+
+
 
 function App() {
+
+  const [cardData, setCardData] = useState(null);
+
+  const tempCard = {"Card Name":"The Fool","Major Arcana":true,"Reversed Meaning":"recklessness, taken advantage of, inconsideration","Upright Meaning":"innocence, new beginnings, free spirit"};
+
+  // useEffect(() =>{
+  //   fetch('http://127.0.0.1:5000/collect-data')
+  //     .then(res => res.json())
+  //     .then(resJson => setCardData(resJson['cards']))
+  //     .catch(error => console.error(error));
+  // }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Card name={tempCard['Card Name']} upright={tempCard['Upright Meaning']} reversed={tempCard['Reversed Meaning']} majorArcana={tempCard['Major Arcana']}/>
     </div>
   );
 }
