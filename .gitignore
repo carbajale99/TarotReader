@@ -21,3 +21,5 @@
 /tarot_site/npm-debug.log*
 /tarot_site/yarn-debug.log*
 /tarot_site/yarn-error.log*
+
+/tarot_api/.env
