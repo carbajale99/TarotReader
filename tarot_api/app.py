@@ -5,7 +5,7 @@ from flask_cors import CORS, cross_origin
 from flask_restful import Api, Resource
 from flask import Flask, request, jsonify, Response, send_from_directory, abort
 from data_converter import DataManager
-from PIL import Image
+from reading_generator import ReadingGenerator
 
 
 app = Flask(__name__)
@@ -39,6 +39,23 @@ def get_img():
     return jsonify({
                 'msg': 'success', 
                 'img': img_string
+           }) 
+
+@app.route('/generate-reading')
+@cross_origin()
+def get_reading():
+    
+    cards = request.args['cards']
+    
+    subject = request.args['subject']
+    
+    reader = ReadingGenerator()
+    
+    reading = reader.generate_reading(cards, subject)
+    
+    return jsonify({
+                'status': 'success', 
+                'reading': reading
            }) 
         
 if __name__ == '__main__':
